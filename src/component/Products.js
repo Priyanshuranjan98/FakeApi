@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react'
 
-function Products() {
+function Products(props) {
     const [data, setData] = useState([])
     useEffect(()=>{
         fetch('https://fakestoreapi.com/products')
@@ -12,6 +12,7 @@ function Products() {
     })
   return (
 <>
+<div style={props.myStyle}>
 <h1>Welcome To Product Page</h1>
 <hr/>
 {data.map((elm) => {
@@ -25,6 +26,7 @@ function Products() {
     
   )
 })}
+</div>
 </>    
   )
 }

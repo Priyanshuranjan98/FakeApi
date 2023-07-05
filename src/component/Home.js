@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Home() {
+function Home(props) {
   return (
     <>
-    <div>
+    <div style={props.myStyle}>
     <h1>{`Welcome To Shopping Mart`}</h1>
     <p><b>Have A look At Best Products</b> </p>
     <h3>Thanks For Visiting</h3>

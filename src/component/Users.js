@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { json } from 'react-router-dom'
 
-function Users() {
+function Users(props) {
     const[data,setData]=useState([]);
     useState(()=>{
         fetch('https://fakestoreapi.com/users')
@@ -13,6 +13,7 @@ function Users() {
     })
   return (
     <>
+    <div style={props.myStyle}>
     <h1>Welcome To User Page</h1>
     <hr/>
     {data.map((elm)=>{
@@ -25,6 +26,7 @@ function Users() {
             </div>
         )
     })}
+    </div>
     </>
   )
 }

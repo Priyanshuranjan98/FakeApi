@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { json } from 'react-router-dom'
 
-function Cart() {
+function Cart(props) {
     const[data,setData]=useState([]);
     useState(()=>{
         fetch('https://fakestoreapi.com/carts')
@@ -13,6 +13,7 @@ function Cart() {
     })
   return (
     <>
+    <div style={props.myStyle}>
     <h1>Welcome To Cart</h1>
     <hr/>
     {data.map((elm)=>{
@@ -31,6 +32,7 @@ function Cart() {
             </div>
         )
     })}
+    </div>
     </>
   )
 }
